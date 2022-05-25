@@ -1,5 +1,3 @@
-from turtle import title
-from unicodedata import name
 from django.shortcuts import get_object_or_404
 from rest_framework import generics, viewsets
 from rest_framework.response import Response
