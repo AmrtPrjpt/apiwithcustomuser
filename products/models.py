@@ -12,11 +12,8 @@ class Product(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="product"
     )
-    # slug = models.SlugField(max_length=250, blank=True)
-    # slug = models.SlugField(max_length=250, unique_for_date="published")
     published = models.DateTimeField(default=timezone.now)
     slug = AutoSlugField(max_length=50, unique=True, populate_from=["name"])
-    # slug = models.SlugField(max_length=250, auto_created=True)
 
     class Meta:
         ordering = ("-name",)

@@ -7,6 +7,3 @@ from . import models
 @admin.register(models.Product)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ("name", "id", "price", "author")
-    # prepopulated_fields = {
-    #     "slug": ("name",),
-    # }
