@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Product
+
+# from .models import Product
+from . import models
 
 # Register your models here.
-admin.site.register(Product)
+@admin.register(models.Product)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ("name", "id", "price", "author")
+    # prepopulated_fields = {
+    #     "slug": ("name",),
+    # }
