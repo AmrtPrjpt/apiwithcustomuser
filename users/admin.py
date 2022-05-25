@@ -10,6 +10,7 @@ class UserAdminConfig(UserAdmin):
     search_fields = ("user_name",)
     list_display = (
         "user_name",
+        "id",
         "email",
         "is_staff",
         "is_active",

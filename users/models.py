@@ -7,7 +7,7 @@ from django.contrib.auth.models import (
     BaseUserManager,
 )
 
-# Create your models here.
+
 class CustomAccountManager(BaseUserManager):
     def create_superuser(self, user_name, email, password, **other_fields):
         other_fields.setdefault("is_staff", True)
@@ -39,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     start_date = models.DateTimeField(default=timezone.now)
     about = models.TextField(max_length=250, blank=True)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = CustomAccountManager()
 
