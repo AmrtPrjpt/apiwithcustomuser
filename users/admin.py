@@ -7,7 +7,14 @@ from django.contrib.auth.admin import UserAdmin
 
 class UserAdminConfig(UserAdmin):
     model = User
-    list_display = ("user_name", "email", "is_staff")
+    search_fields = ("user_name",)
+    list_display = (
+        "user_name",
+        "email",
+        "is_staff",
+        "is_active",
+        "is_superuser",
+    )
     ordering = ("-user_name",)
     fieldsets = (
         (None, {"fields": ("user_name", "email")}),
